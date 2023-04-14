@@ -1,0 +1,32 @@
+/* Global tyles  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p,
+button,
+input {
+  font-size: 1rem;
+}
+
+body {
+  background-color: #f3f4f8;
+}
