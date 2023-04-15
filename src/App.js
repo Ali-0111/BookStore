@@ -1,14 +1,15 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Categories from './components/categories';
-import './styles/app.css';
+import { Route, Routes } from 'react-router-dom';
+import Books from './components/pages/Books';
+import Categories from './components/pages/Categories';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
-    <div className="app-wrapper">
-      <h2 className="title">Hi</h2>
+    <div className="App">
+      <Navigation />
       <Routes>
-        <Route path="/" exact element={<Categories />}> </Route>
+        <Route path="/" element={<Books />} />
+        <Route path="/categories" element={<Categories />} />
       </Routes>
     </div>
   );
