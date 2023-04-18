@@ -1,17 +1,20 @@
-import { Route, Routes } from 'react-router-dom';
-import Books from './components/pages/Books';
-import Categories from './components/pages/Categories';
-import Navigation from './components/Navigation';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import './app.css';
+import Header from './components/Header';
+import Category from './components/Category';
+import BookWrapper from './components/Books/BookWrapper';
 
 function App() {
   return (
-    <div className="App">
-      <Navigation />
+    <>
       <Routes>
-        <Route path="/" element={<Books />} />
-        <Route path="/categories" element={<Categories />} />
+        <Route path="/" element={<Header />}>
+          <Route index element={<BookWrapper />} />
+          <Route path="categories" element={<Category />} />
+        </Route>
       </Routes>
-    </div>
+    </>
   );
 }
 
