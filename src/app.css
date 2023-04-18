@@ -16,3 +16,8 @@ li {
 .links {
   display: flex;
 }
+
+article {
+  border: 2px solid gray;
+  margin: 1px;
+}
