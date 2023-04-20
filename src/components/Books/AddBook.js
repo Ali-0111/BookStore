@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 const AddBook = ({ update }) => {
   const [bookName, setBookName] = useState('');
   const [authorName, setAuthorName] = useState('');
-
   const submitHandler = (e) => {
     e.preventDefault();
     update(bookName, authorName);
