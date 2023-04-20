@@ -22,23 +22,25 @@ const AddBook = ({ update }) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <input
-        type="text"
-        value={bookName}
-        placeholder="Book Name"
-        onChange={inputHandler}
-        required
-      />
+    <>
+      <form className="form-wrapper" onSubmit={submitHandler}>
+        <input
+          type="text"
+          value={bookName}
+          placeholder="Book Name"
+          onChange={inputHandler}
+          required
+        />
 
-      <select required onChange={selectHandler}>
-        <option value="">--Select author--</option>
-        <option value="author1">author1</option>
-        <option value="author2">author2</option>
-      </select>
-      <button type="submit">Add</button>
+        <select required onChange={selectHandler}>
+          <option value="">--Select author--</option>
+          <option value="author1">author1</option>
+          <option value="author2">author2</option>
+        </select>
+        <button type="submit">Add</button>
 
-    </form>
+      </form>
+    </>
   );
 };
 

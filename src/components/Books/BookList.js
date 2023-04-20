@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import BookInfo from './BookInfo';
 
 const BookList = ({ collection, filter }) => (
-  <>
+  <div className="book-list-wrapper">
+    <h2>List of the Book...</h2>
     {
       collection.map((book) => (
         <BookInfo
@@ -14,7 +15,8 @@ const BookList = ({ collection, filter }) => (
         />
       ))
       }
-  </>
+    <hr />
+  </div>
 );
 
 BookList.propTypes = {
