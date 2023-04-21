@@ -33,8 +33,10 @@ const AddBook = ({ update }) => {
 
         <select required onChange={selectHandler}>
           <option value="">--Select author--</option>
-          <option value="author1">author1</option>
-          <option value="author2">author2</option>
+          <option value="author1">John</option>
+          <option value="author2">Ahmad</option>
+          <option value="author2">Ronaldo</option>
+          <option value="author2">Bosh</option>
         </select>
         <button type="submit">Add</button>
 

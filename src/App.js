@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import './app.css';
 import Header from './components/Header';
 import Category from './components/Category';
 import BookWrapper from './components/Books/BookWrapper';
 
 function App() {
-  const [collection, setCollection] = useState([{ name: 'Math', author: 'Safari' }]);
+  const collection = useSelector((store) => (
+    store.bookReducer.bookCollection));
   return (
     <>
       <Routes>
@@ -14,7 +16,7 @@ function App() {
           <Route
             index
             element={
-              <BookWrapper collection={collection} setCollection={setCollection} />
+              <BookWrapper collection={collection} />
               }
           />
           <Route path="categories" element={<Category />} />
