@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   bookCollection: [
     {
-      id: 'a',
+      id: Date.now().toString(),
       title: 'History',
       author: 'Safari',
       category: 'NA',
