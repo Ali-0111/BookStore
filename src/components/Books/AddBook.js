@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../../redux/books/booksSlice';
 
-const AddBook = ({ update }) => {
+const AddBook = () => {
+  const dispatch = useDispatch();
   const [bookName, setBookName] = useState('');
   const [authorName, setAuthorName] = useState('');
+  const update = (bookName, authorName) => (
+    dispatch(addBook({
+      title: bookName, author: authorName, category: 'NA', id: bookName + authorName,
+    })));
   const submitHandler = (e) => {
     e.preventDefault();
     update(bookName, authorName);
@@ -33,20 +39,16 @@ const AddBook = ({ update }) => {
 
         <select required onChange={selectHandler}>
           <option value="">--Select author--</option>
-          <option value="author1">John</option>
-          <option value="author2">Ahmad</option>
-          <option value="author2">Ronaldo</option>
-          <option value="author2">Bosh</option>
+          <option value="John">John</option>
+          <option value="Ahmad">Ahmad</option>
+          <option value="Ronaldo">Ronaldo</option>
+          <option value="Bosh">Bosh</option>
         </select>
         <button type="submit">Add</button>
 
       </form>
     </>
   );
-};
-
-AddBook.propTypes = {
-  update: PropTypes.func.isRequired,
 };
 
 export default AddBook;

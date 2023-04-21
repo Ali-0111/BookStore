@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 import './app.css';
 import Header from './components/Header';
@@ -7,8 +6,6 @@ import Category from './components/Category';
 import BookWrapper from './components/Books/BookWrapper';
 
 function App() {
-  const collection = useSelector((store) => (
-    store.bookReducer.bookCollection));
   return (
     <>
       <Routes>
@@ -16,7 +13,7 @@ function App() {
           <Route
             index
             element={
-              <BookWrapper collection={collection} />
+              <BookWrapper />
               }
           />
           <Route path="categories" element={<Category />} />

@@ -1,7 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  bookCollection: [{ name: 'History', author: 'Safari' }],
+  bookCollection: [
+    {
+      id: 'a',
+      title: 'History',
+      author: 'Safari',
+      category: 'NA',
+    },
+  ],
 };
 const bookSlice = createSlice(
   {
@@ -16,7 +23,7 @@ const bookSlice = createSlice(
       removeBook: (state, action) => (
         {
           ...state,
-          bookCollection: state.bookCollection.filter((book) => book.name !== action.payload),
+          bookCollection: state.bookCollection.filter((book) => book.id !== action.payload),
         }
       ),
     },

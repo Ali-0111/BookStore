@@ -1,9 +1,12 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { removeBook } from '../../redux/books/booksSlice';
 
-const Buttons = ({ name, filter }) => {
+const Buttons = ({ id }) => {
+  const dispatch = useDispatch();
   const removeHandler = () => {
-    filter(name);
+    dispatch(removeBook(id));
   };
 
   return (
@@ -16,7 +19,6 @@ const Buttons = ({ name, filter }) => {
 };
 
 Buttons.propTypes = {
-  name: PropTypes.string.isRequired,
-  filter: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 export default Buttons;
