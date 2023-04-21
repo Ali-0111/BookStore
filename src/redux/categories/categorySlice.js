@@ -3,13 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   categoryCollection: [],
   status: 'UnderConstruction',
+  isChecked: false,
 };
 const categorySlice = createSlice(
   {
     name: 'category',
     initialState,
     reducers: {
-      checkStatus: (state) => (state.status),
+      checkStatus: (state) => (
+        { ...state, status: 'UnderConstruction', isChecked: true }),
     },
   },
 );

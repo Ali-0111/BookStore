@@ -55,10 +55,15 @@ main {
   outline: none;
 }
 
-article button {
+article button, 
+.status-btn {
   padding: 0.3rem 0.5rem;
   border: none;
   margin-right: 0.3rem;
+}
+
+.status-btn {
+  margin: 0.3rem;
 }
 
 .form-wrapper button {
