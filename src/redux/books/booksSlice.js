@@ -3,7 +3,6 @@ import getAllBooksAPI, { addBookToAPI } from '../api/apiFunctions';
 
 const initialState = {
   bookCollection: {},
-  result: '',
 };
 const bookSlice = createSlice(
   {
@@ -23,15 +22,27 @@ const bookSlice = createSlice(
       ),
     },
     extraReducers: (builder) => {
-      builder
-        .addCase(getAllBooksAPI.fulfilled, (state, action) => (
+      builder.addCase(getAllBooksAPI.fulfilled, (state, action) => (
+        {
+          ...state,
+          bookCollection: action.payload,
+        }));
+      builder.addCase(addBookToAPI.fulfilled, (state, { payload }) => {
+        const objectBook = {};
+        objectBook[payload.item_id] = [
+          {
+            author: payload.author,
+            title: payload.title,
+            category: payload.category,
+          },
+        ];
+
+        return (
           {
             ...state,
-            bookCollection: action.payload,
-          }))
-        .addCase(addBookToAPI.fulfilled, (_, action) => {
-          console.log(action.payload);
-        });
+            ...objectBook,
+          });
+      });
     },
   },
 );

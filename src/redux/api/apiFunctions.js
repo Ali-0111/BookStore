@@ -14,7 +14,7 @@ const getAllBooksAPI = createAsyncThunk('book/ApiBooks', async () => {
 export const addBookToAPI = createAsyncThunk('book/addApiBook', async (newBook) => {
   const request = await axios.post(BASE_URL, newBook);
   console.log('API response after adding:', request.data);
-  return request.data;
+  return newBook;
 });
 
 export default getAllBooksAPI;
