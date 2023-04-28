@@ -27,6 +27,7 @@ const bookSlice = createSlice(
           ...state,
           bookCollection: action.payload,
         }));
+
       builder.addCase(addBookToAPI.fulfilled, (state, { payload }) => {
         const objectBook = {};
         objectBook[payload.item_id] = [
@@ -40,7 +41,10 @@ const bookSlice = createSlice(
         return (
           {
             ...state,
-            ...objectBook,
+            bookCollection: {
+              ...state.bookCollection,
+              ...objectBook,
+            },
           });
       });
     },
