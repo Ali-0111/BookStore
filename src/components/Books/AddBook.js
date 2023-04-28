@@ -1,20 +1,29 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../../redux/books/booksSlice';
+// import { addBook } from '../../redux/books/booksSlice';
+import getAllBooksAPI, { addBookToAPI } from '../../redux/api/apiFunctions';
 
 const AddBook = () => {
   const dispatch = useDispatch();
   const [bookName, setBookName] = useState('');
   const [authorName, setAuthorName] = useState('');
-  const update = (bookName, authorName) => (
-    dispatch(addBook(
-      {
-        title: bookName,
-        author: authorName,
-        category: 'NA',
-        id: Date.now().toString(),
-      },
-    )));
+  const update = async (bookName, authorName) => {
+    // dispatch(addBook(
+    //   {
+    //     title: bookName,
+    //     author: authorName,
+    //     category: 'NA',
+    //     id: Date.now().toString(),
+    //   },
+    // ))
+    (addBookToAPI({
+      item_id: Date.now().toString(),
+      title: bookName,
+      author: authorName,
+      category: 'N/A',
+    }));
+    dispatch(getAllBooksAPI());
+  };
   const submitHandler = (e) => {
     e.preventDefault();
     update(bookName, authorName);

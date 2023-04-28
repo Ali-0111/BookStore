@@ -3,18 +3,19 @@ import { useSelector } from 'react-redux';
 import BookInfo from './BookInfo';
 
 const BookList = () => {
-  const collection = useSelector((store) => (
-    store.bookReducer.bookCollection));
+  const { bookCollection } = useSelector((store) => (
+    store.bookReducer));
+  console.log('This is collection', bookCollection);
   return (
     <div className="book-list-wrapper">
       <h2>List of the Book...</h2>
       {
-        collection.map((book) => (
+        Object.keys(bookCollection).map((id) => (
           <BookInfo
-            key={book.id}
-            author={book.author}
-            id={book.id}
-            name={book.title}
+            key={id}
+            author={bookCollection[id][0].author}
+            id={id}
+            name={bookCollection[id][0].title}
           />
         ))
         }

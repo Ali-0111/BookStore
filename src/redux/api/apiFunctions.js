@@ -7,17 +7,12 @@ const BASE_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/boo
 
 const getAllBooksAPI = createAsyncThunk('book/ApiBooks', async () => {
   const request = await axios.get(BASE_URL);
-  console.log(request, 'all books');
+  console.log(request, 'API all books');
   return request.data;
 });
 
-export const addBookToAPI = createAsyncThunk('book/addApiBook', async () => {
-  const request = await axios.post(BASE_URL, {
-    item_id: Date.now().toString(),
-    title: 'Chemistry',
-    author: 'Safari',
-    category: 'N/A',
-  });
+export const addBookToAPI = createAsyncThunk('book/addApiBook', async (newBook) => {
+  const request = await axios.post(BASE_URL, newBook);
   console.log(request, 'bookAdded');
   return request.data;
 });
