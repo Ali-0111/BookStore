@@ -1,31 +1,74 @@
 import { createSlice } from '@reduxjs/toolkit';
+import getAllBooksAPI, { addBookToAPI, removeBookApi } from '../api/apiFunctions';
 
 const initialState = {
-  bookCollection: [
-    {
-      id: Date.now().toString(),
-      title: 'History',
-      author: 'Safari',
-      category: 'NA',
-    },
-  ],
+  bookCollection: {},
+  isLoading: false,
 };
 const bookSlice = createSlice(
   {
     name: 'book',
     initialState,
-    reducers: {
-      addBook: (state, action) => (
+    extraReducers: (builder) => {
+      builder.addCase(getAllBooksAPI.fulfilled, (state, action) => (
         {
           ...state,
-          bookCollection: [...state.bookCollection, action.payload],
-        }),
-      removeBook: (state, action) => (
+          bookCollection: action.payload,
+          isLoading: false,
+        }));
+
+      builder.addCase(addBookToAPI.fulfilled, (state, { payload }) => {
+        const objectBook = {};
+        objectBook[payload.item_id] = [
+          {
+            author: payload.author,
+            title: payload.title,
+            category: payload.category,
+          },
+        ];
+
+        return (
+          {
+            ...state,
+            isLoading: false,
+            bookCollection: {
+              ...state.bookCollection,
+              ...objectBook,
+            },
+          });
+      });
+
+      builder.addCase(removeBookApi.fulfilled, (state, { payload }) => {
+        const allRecordsByIdProperty = {
+          ...state.bookCollection,
+        };
+
+        delete allRecordsByIdProperty[payload];
+
+        return (
+          {
+            ...state,
+            isLoading: false,
+            bookCollection: allRecordsByIdProperty,
+          }
+        );
+      });
+
+      builder.addCase(getAllBooksAPI.pending, (state) => (
         {
           ...state,
-          bookCollection: state.bookCollection.filter((book) => book.id !== action.payload),
-        }
-      ),
+          isLoading: true,
+        }));
+      builder.addCase(addBookToAPI.pending, (state) => (
+        {
+          ...state,
+          isLoading: true,
+        }));
+      builder.addCase(removeBookApi.pending, (state) => (
+        {
+          ...state,
+          isLoading: true,
+        }));
     },
   },
 );
