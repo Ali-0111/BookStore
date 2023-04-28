@@ -1,14 +1,29 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import BookInfo from './BookInfo';
+import getAllBooksAPI from '../../redux/api/apiFunctions';
 
 const BookList = () => {
-  const { bookCollection } = useSelector((store) => (
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllBooksAPI());
+  }, []);
+
+  const { bookCollection, isLoading } = useSelector((store) => (
     store.bookReducer));
-  console.log('This is collection', bookCollection);
+
+  if (isLoading) {
+    return (
+      <article>
+        <h2>Loading Books...</h2>
+      </article>
+    );
+  }
+
   return (
     <div className="book-list-wrapper">
-      <h2>List of the Book...</h2>
+      <h2>List of the Book: </h2>
       {
         Object.keys(bookCollection).map((id) => (
           <BookInfo

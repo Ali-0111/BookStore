@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { addBook } from '../../redux/books/booksSlice';
 import { addBookToAPI } from '../../redux/api/apiFunctions';
 
 const AddBook = () => {
@@ -8,25 +7,23 @@ const AddBook = () => {
   const [bookName, setBookName] = useState('');
   const [authorName, setAuthorName] = useState('');
   const update = (bookName, authorName) => {
-    // dispatch(addBook(
-    //   {
-    //     title: bookName,
-    //     author: authorName,
-    //     category: 'NA',
-    //     id: Date.now().toString(),
-    //   },
-    // ))
-    dispatch(addBookToAPI({
-      item_id: Date.now().toString(),
-      title: bookName,
-      author: authorName,
-      category: 'N/A',
-    }));
+    dispatch(
+      addBookToAPI(
+        {
+          item_id: Date.now().toString(),
+          title: bookName,
+          author: authorName,
+          category: 'N/A',
+        },
+      ),
+    );
   };
+
   const submitHandler = (e) => {
     e.preventDefault();
     update(bookName, authorName);
     setBookName('');
+    setAuthorName('');
   };
 
   const inputHandler = (e) => {
@@ -50,13 +47,14 @@ const AddBook = () => {
           required
         />
 
-        <select required onChange={selectHandler}>
-          <option value="">--Select author--</option>
-          <option value="John">John</option>
-          <option value="Ahmad">Ahmad</option>
-          <option value="Ronaldo">Ronaldo</option>
-          <option value="Bosh">Bosh</option>
-        </select>
+        <input
+          type="text"
+          value={authorName}
+          placeholder="Author Name"
+          onChange={selectHandler}
+          required
+        />
+
         <button type="submit">Add</button>
 
       </form>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook } from '../../redux/books/booksSlice';
+import { removeBookApi } from '../../redux/api/apiFunctions';
 
 const Buttons = ({ id }) => {
   const dispatch = useDispatch();
   const removeHandler = () => {
-    dispatch(removeBook(id));
+    dispatch(removeBookApi(id));
   };
 
   return (
