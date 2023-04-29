@@ -1,0 +1,17 @@
+.book-list-wrapper {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+article {
+  border: 1px solid gray;
+  padding: 2rem;
+  margin: 0.3rem 0;
+}
+
+.action-btn {
+  color: #0290ff;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  margin-right: 0.3rem;
+}

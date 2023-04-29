@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBookToAPI } from '../../redux/api/apiFunctions';
+import '../../styles/addBook.css';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -38,8 +39,10 @@ const AddBook = () => {
 
   return (
     <>
+      <h2>Add New Book</h2>
       <form className="form-wrapper" onSubmit={submitHandler}>
         <input
+          className="input-book"
           type="text"
           value={bookName}
           placeholder="Book Name"
@@ -48,6 +51,7 @@ const AddBook = () => {
         />
 
         <input
+          className="input-author"
           type="text"
           value={authorName}
           placeholder="Author Name"
@@ -55,7 +59,7 @@ const AddBook = () => {
           required
         />
 
-        <button type="submit">Add</button>
+        <button className="submit-btn" type="submit">Add</button>
 
       </form>
     </>

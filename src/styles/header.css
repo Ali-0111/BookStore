@@ -1,0 +1,32 @@
+/*********    Main Styles   ************/
+
+.main-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  padding: 0.5rem 10%;
+  background-color: white;
+}
+
+.first-part-head {
+  display: flex;
+  align-items: center;
+}
+
+.first-part-head h1 {
+  color: #0290ff;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  opacity: 0.5;
+}

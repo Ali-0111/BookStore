@@ -11,9 +11,9 @@ const Buttons = ({ id }) => {
 
   return (
     <>
-      <button type="button">Comments</button>
-      <button type="button" onClick={removeHandler}>Remove</button>
-      <button type="button">Edit</button>
+      <button className="action-btn" type="button">Comments</button>
+      <button className="action-btn" type="button" onClick={removeHandler}>Remove</button>
+      <button className="action-btn" type="button">Edit</button>
     </>
   );
 };

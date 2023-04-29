@@ -1,0 +1,30 @@
+.form-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-wrapper h2 {
+  margin: 1rem 0;
+}
+
+.form-wrapper input {
+  padding: 0.5rem;
+  outline: none;
+}
+
+.submit-btn {
+  border: none;
+  width: 15%;
+  padding: 0.5rem 2rem;
+  color: white;
+  background-color: #0290ff;
+}
+
+.input-book {
+  width: 60%;
+}
+
+.input-author {
+  width: 20%;
+}
