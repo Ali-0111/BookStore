@@ -55,6 +55,7 @@ const AddBook = () => {
           type="text"
           value={authorName}
           onChange={selectHandler}
+          placeholder="Author Name"
           required
         />
 
