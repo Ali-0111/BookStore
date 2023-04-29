@@ -45,7 +45,6 @@ const BookList = () => {
 
   return (
     <div className="book-list-wrapper">
-      <h2>List of the Book: </h2>
       {
         Object.keys(bookCollection).map((id) => (
           <BookInfo
@@ -56,7 +55,7 @@ const BookList = () => {
           />
         ))
       }
-      <hr />
+      <hr className="bookList-seprator" />
     </div>
   );
 };

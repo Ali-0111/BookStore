@@ -39,10 +39,10 @@ const AddBook = () => {
 
   return (
     <>
-      <h2>Add New Book</h2>
+      <h2 className="form-title">Add New Book</h2>
       <form className="form-wrapper" onSubmit={submitHandler}>
         <input
-          className="input-book"
+          className="input-book mont"
           type="text"
           value={bookName}
           placeholder="Book Name"
@@ -51,7 +51,7 @@ const AddBook = () => {
         />
 
         <input
-          className="input-author"
+          className="input-author mont"
           type="text"
           value={authorName}
           placeholder="Author Name"
@@ -59,7 +59,7 @@ const AddBook = () => {
           required
         />
 
-        <button className="submit-btn" type="submit">Add</button>
+        <button className="submit-btn rob" type="submit">Add</button>
 
       </form>
     </>
