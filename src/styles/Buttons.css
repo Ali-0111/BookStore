@@ -1,0 +1,44 @@
+button {
+  border: none;
+  background-color: #fff0;
+  color: #4386bf;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-top: 1.3rem;
+  cursor: pointer;
+}
+
+.action-btn {
+  color: #0290ff;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  margin-right: 0.3rem;
+}
+
+.status-btn {
+  border: 1px solid #e8e8e8;
+  padding: 0.5rem 1rem;
+}
+
+.commentsBtn {
+  padding-right: 1.05rem;
+  padding-left: 0;
+}
+
+.deleteBtn {
+  padding-inline: 1.05rem;
+  border-left: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8;
+}
+
+.editBtn {
+  padding-left: 1.05rem;
+}
+
+.updateProgressBtn {
+  background-color: #0290ff;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0.5rem 3rem;
+  font-weight: 100;
+}

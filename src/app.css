@@ -1,0 +1,57 @@
+/********* Global Styles ************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts */
+
+.mont {
+  font-family: Montserrat, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.rob {
+  font-family: 'Roboto Slab', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f5f6fa;
+  padding: 5rem;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+p,
+button {
+  font-size: 1.6rem;
+}
+
+li {
+  list-style: none;
+}
+
+main {
+  padding: 0.5rem 10%;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
