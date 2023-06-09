@@ -1,30 +1,14 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addBookToAPI } from '../../redux/api/apiFunctions';
-import '../../styles/addBook.css';
+import PropTypes from 'prop-types';
 
-const AddBook = () => {
-  const dispatch = useDispatch();
+const AddBook = ({ update }) => {
   const [bookName, setBookName] = useState('');
   const [authorName, setAuthorName] = useState('');
-  const update = (bookName, authorName) => {
-    dispatch(
-      addBookToAPI(
-        {
-          item_id: Date.now().toString(),
-          title: bookName,
-          author: authorName,
-          category: 'N/A',
-        },
-      ),
-    );
-  };
 
   const submitHandler = (e) => {
     e.preventDefault();
     update(bookName, authorName);
     setBookName('');
-    setAuthorName('');
   };
 
   const inputHandler = (e) => {
@@ -39,10 +23,8 @@ const AddBook = () => {
 
   return (
     <>
-      <h2 className="form-title">Add New Book</h2>
       <form className="form-wrapper" onSubmit={submitHandler}>
         <input
-          className="input-book mont"
           type="text"
           value={bookName}
           placeholder="Book Name"
@@ -50,20 +32,20 @@ const AddBook = () => {
           required
         />
 
-        <input
-          className="input-author mont"
-          type="text"
-          value={authorName}
-          onChange={selectHandler}
-          placeholder="Author Name"
-          required
-        />
-
-        <button className="submit-btn rob" type="submit">Add</button>
+        <select required onChange={selectHandler}>
+          <option value="">--Select author--</option>
+          <option value="author1">author1</option>
+          <option value="author2">author2</option>
+        </select>
+        <button type="submit">Add</button>
 
       </form>
     </>
   );
+};
+
+AddBook.propTypes = {
+  update: PropTypes.func.isRequired,
 };
 
 export default AddBook;

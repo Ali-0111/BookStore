@@ -1,25 +1,22 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBookApi } from '../../redux/api/apiFunctions';
-import '../../styles/Buttons.css';
 
-const Buttons = ({ id }) => {
-  const dispatch = useDispatch();
+const Buttons = ({ name, filter }) => {
   const removeHandler = () => {
-    dispatch(removeBookApi(id));
+    filter(name);
   };
 
   return (
     <>
-      <button className="action-btn rob commentsBtn" type="button">Comments</button>
-      <button className="action-btn rob deleteBtn" type="button" onClick={removeHandler}>Remove</button>
-      <button className="action-btn rob editBtn" type="button">Edit</button>
+      <button type="button">Comments</button>
+      <button type="button" onClick={removeHandler}>Remove</button>
+      <button type="button">Edit</button>
     </>
   );
 };
 
 Buttons.propTypes = {
-  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  filter: PropTypes.func.isRequired,
 };
 export default Buttons;
