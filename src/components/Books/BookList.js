@@ -6,9 +6,9 @@ const BookList = ({ collection, filter }) => (
   <div className="book-list-wrapper">
     <h2>List of the Book...</h2>
     {
-      collection.map((book, i) => (
+      collection.map((book) => (
         <BookInfo
-          key={`${i + 1}book.name`}
+          key={book.name}
           author={book.author}
           name={book.name}
           filter={filter}
