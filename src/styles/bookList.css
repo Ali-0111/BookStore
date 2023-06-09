@@ -1,0 +1,89 @@
+.book-list-wrapper {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.bookList-seprator {
+  color: #e8e8e8;
+  margin: 2rem 0;
+}
+
+article {
+  display: flex;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 4px;
+  margin-bottom: 0.938rem;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.author {
+  font-size: 1.5rem;
+  color: #4386bf;
+}
+
+.progressContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 17rem;
+  height: 4.5rem;
+  margin-left: auto;
+  padding-right: 5rem;
+  border-right: 2px solid #e8e8e8;
+}
+
+.progressBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.25rem;
+  width: 4.25rem;
+  background-image:
+    conic-gradient(
+      #307bbe 0%,
+      #0290ff 64%,
+      #e8e8e8 64%,
+      #e8e8e8 100%
+    );
+  border-radius: 50%;
+  margin-inline: 1.3rem;
+  overflow: hidden;
+}
+
+.progressBarContent {
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.percentage {
+  font-size: 2rem;
+}
+
+.completed {
+  color: #888;
+  font-size: 1.2rem;
+}
+
+.chapterCont {
+  padding-inline: 3.7rem 7.5rem;
+}
+
+.curChap {
+  color: #888;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.chapter {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
