@@ -2,36 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Buttons from './Buttons';
 
-const BookInfo = ({
-  id, name, author,
-}) => (
-  <article className="rob">
+const BookInfo = ({ name, author, filter }) => (
+  <article>
+    {/* div info */}
     <div className="info">
-      <h2 className="title">{name}</h2>
-      <p className="author">{author}</p>
-      <Buttons id={id} />
+      <h2>{name}</h2>
+      <p>{author}</p>
+      <Buttons name={name} filter={filter} />
     </div>
-    <div className="progressContainer">
-      <div className="progressBar">
-        <div className="progressBarContent" />
-      </div>
-      <p className="percentage mont">0%</p>
-      <p className="completed mont">Completed</p>
-    </div>
-    <div className="chapterCont">
-      <p className="curChap rob">CURRENT CHAPTER</p>
-      <p className="chapter rob">Introduction</p>
-      <button className="updateProgressBtn rob" type="button">
-        UPDATE PROGRESS
-      </button>
-    </div>
+    {/* div progroress */}
   </article>
 );
 
 BookInfo.propTypes = {
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  filter: PropTypes.func.isRequired,
 };
 
 export default BookInfo;

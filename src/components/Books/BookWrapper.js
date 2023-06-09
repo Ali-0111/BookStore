@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import AddBook from './AddBook';
 import BookList from './BookList';
@@ -17,12 +16,11 @@ const BookWrapper = () => {
   };
 
   return (
-    <main>
+    <>
       <BookList collection={collection} filter={filter} />
       <AddBook update={update} />
-    </main>
+    </>
   );
 };
-
 
 export default BookWrapper;
