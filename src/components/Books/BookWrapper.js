@@ -1,9 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import AddBook from './AddBook';
 import BookList from './BookList';
 
-const BookWrapper = ({ collection, setCollection }) => {
+const BookWrapper = () => {
+  const [collection, setCollection] = useState([{ name: 'Math', author: 'Safari' }]);
+
   const update = (bookName, authorName) => {
     setCollection([...collection,
       { name: bookName, author: authorName }]);
@@ -21,11 +22,5 @@ const BookWrapper = ({ collection, setCollection }) => {
     </main>
   );
 };
-BookWrapper.propTypes = {
-  collection: PropTypes.arrayOf(PropTypes.shape({
-    author: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-  })).isRequired,
-  setCollection: PropTypes.func.isRequired,
-};
+
 export default BookWrapper;
