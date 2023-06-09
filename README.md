@@ -23,7 +23,7 @@
   - [Usage](#usage)
   - [Run tests](#run-tests)
   - [Deployment](#deployment)
-- [👥s](#authors)
+- [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
@@ -161,6 +161,7 @@ You can deploy this project using:
 - GitHub: [@Ali-0111](https://github.com/Ali-0111)
 - Twitter: [@qurban_safari](https://twitter.com/qurban_safari)
 - LinkedIn: [@ali](https://www.linkedin.com/in/ali-safari-695214202/)
+> Mention all of the collaborators of this project.
 
 <!-- 👤 **Author1**
 
